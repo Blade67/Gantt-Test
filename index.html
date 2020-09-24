@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>gantt Test</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="gantt/gantt.css" />
+        <script src="gantt/gantt.js"></script>
+        <script src="middleware.js"></script>
+    </head>
+    <body>
+        <div class="gantt-table" id="gantt-table"></div>
+        <script>
+            let gantt = new Gantt({
+                columns: [
+                    "00:00",
+                    "01:00",
+                    "02:00",
+                    "03:00",
+                    "04:00",
+                    "05:00",
+                    "06:00",
+                    "07:00",
+                    "08:00",
+                    "09:00",
+                    "10:00",
+                    "11:00",
+                    "12:00",
+                    "13:00",
+                    "14:00",
+                    "15:00",
+                    "16:00",
+                    "17:00",
+                    "18:00",
+                    "19:00",
+                    "10:00",
+                    "21:00",
+                    "22:00",
+                    "23:00",
+                ],
+                rows: ["Mike", "John", "Ellie", "Patrick", "Paul", "Sarah", "Bob"],
+                element: "gantt-table",
+                middlewares: [new middleware("Yeeet")],
+            });
+            gantt.addCard({
+                row: 2,
+                column: 2,
+                length: 3,
+                backgroundColor: "#0fff00",
+                color: "#0000aa",
+                id: "example0",
+                label: "Example Task",
+            });
+            gantt.addCard({
+                row: 4,
+                column: 1,
+                length: 1,
+                backgroundColor: "#ff00ff",
+                id: "example1",
+                label: "Other task",
+            });
+            gantt.addCard({
+                row: 3,
+                column: 4,
+                length: 2,
+                id: "example2",
+                label: "Missing values",
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+/* Propperties */
+$gantt-columns: 24; // Hours
+$gantt-rows: 7; // Users
+$gantt-width: 300vw;
+/* Style */
+$gantt-background: transparent;
+$gantt-label-background: rgba(255, 255, 255, 0.05);
+$gantt-label-color: #ffffff;
+$gantt-label-hover-background: rgba(255, 255, 255, 0.03);
+$gantt-label-hover-color: #f0f0f0;
+$gantt-cell-background: rgba(0, 0, 0, 0.1);
+$gantt-cell-hover-background: rgb(47, 48, 49);
+$gantt-task-hover-filter: hue-rotate(25deg);
+/* Scale */
+$gantt-cell-height: 3em;
+$gantt-cell-width: 4em;
+/* Scrollbar */
+$gantt-scrollbar-width: 0.75em;
+$gantt-scrollbar-height: 0.75em;
+$gantt-scrollbar-track-radius: 0.75em;
+$gantt-scrollbar-thumb-radius: 0.75em;
+$gantt-scrollbar-track-boxshadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+$gantt-scrollbar-thumb-boxshadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+$gantt-scrollbar-background: rgb(60, 60, 60);
+$gantt-scrollbar-hover-background: rgb(66, 66, 66);

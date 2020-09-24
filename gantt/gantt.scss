@@ -1,0 +1,70 @@
+@import "variables.scss";
+
+.gantt-table {
+    margin: 2em 1.5em 2em 1.5em;
+    width: calc(100% - 3em);
+    min-height: $gantt-cell-height;
+    overflow-x: scroll;
+    background-color: $gantt-background;
+    display: grid;
+    grid-template-columns: repeat(#{$gantt-columns}, 1fr);
+    grid-template-rows: repeat(#{$gantt-rows}, 1fr);
+    .gantt-item {
+        background-color: $gantt-cell-background;
+        min-width: calc(#{$gantt-cell-width} * 2);
+        min-height: $gantt-cell-height;
+        padding: 0.5em;
+        margin: 4px;
+        border-radius: 4px;
+        &:nth-child(-n + #{$gantt-columns + 1}):not(.task),
+        &:nth-child(#{$gantt-columns + 1}n + 1):not(.task) {
+            background-color: $gantt-label-background;
+            color: $gantt-label-color;
+            text-align: center;
+            line-height: $gantt-cell-height;
+            &:hover {
+                background-color: $gantt-label-hover-background;
+                color: $gantt-label-hover-color;
+            }
+        }
+        &:nth-child(-n + #{$gantt-columns + 1}):not(.task) {
+            font-size: 20px;
+            padding: 0;
+            margin-top: 0;
+        }
+        &:nth-child(#{$gantt-columns + 1}n + 1):not(.task) {
+            margin-left: 0;
+        }
+
+        &:not(&:nth-child(#{$gantt-columns + 1}n + 1):not(.task)):not(&:nth-child(-n
+                    + #{$gantt-columns
+                    + 1}):not(.task)):hover {
+            cursor: pointer;
+            background: $gantt-cell-hover-background;
+        }
+        &.task {
+            text-align: center;
+            line-height: $gantt-cell-height;
+            &:hover {
+                cursor: pointer;
+                filter: $gantt-task-hover-filter;
+            }
+        }
+    }
+    &::-webkit-scrollbar {
+        height: $gantt-scrollbar-height;
+        width: $gantt-scrollbar-width;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: $gantt-scrollbar-track-boxshadow;
+        border-radius: $gantt-scrollbar-track-radius;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: $gantt-scrollbar-thumb-radius;
+        background-color: $gantt-scrollbar-background;
+        box-shadow: $gantt-scrollbar-thumb-boxshadow;
+        &:hover {
+            background-color: $gantt-scrollbar-hover-background;
+        }
+    }
+}
